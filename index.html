@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"></noscript>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <h1>LOGO</h1>
+      </div>
+      <div class="nav-right">
+
+        <div class="hamberger">
+          <div></div>
+          <div></div>
+          <div></div>
+
+        </div>
+
+        <ul class="navitem">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown-li">
+            <a href="#our-service">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+            <ul class="dropdown-menu">
+             <li><a href="#">Landscape Design & Planning</a></li>
+    <li><a href="#">Hardscaping & Construction</a></li>
+    <li><a href="#">Lawn & Garden Services</a></li>
+    <li><a href="#">Specialized Landscape Solutions</a></li>
+            </ul>
+          </li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+           <li><a href="#" class="nav-cta-btn js-open-popup">Get a Quote</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+    <div class="mobile-overlay"></div>
+    <aside class="navitems-mb">
+      <div class="menu-top">
+        <ul class="navitem-mb">
+          <li>
+            <a class="nav-link" href="#">
+              <i class="fas fa-home"></i>Home
+            </a>
+          </li>
+         <li class="mobile-dropdown">
+  <a class="nav-link" href="#">
+    <i class="fas fa-seedling"></i>
+    <span>Our Services</span>
+    <i class="fas fa-chevron-down mobile-arrow"></i>
+  </a>
+  <ul class="mobile-submenu">
+    <li><a href="#">Landscape Design & Planning</a></li>
+    <li><a href="#">Hardscaping & Construction</a></li>
+    <li><a href="#">Lawn & Garden Services</a></li>
+    <li><a href="#">Specialized Landscape Solutions</a></li>
+  </ul>
+</li>
+          <li>
+            <a class="nav-link" href="#portfolio">
+              <i class="fas fa-briefcase"></i>Portfolio
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#about-us">
+              <i class="fas fa-users"></i>About Us
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#contact-us">
+              <i class="fas fa-phone"></i>Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-bottom">
+        <a href="#contact-us" class="menu-cta-btn js-open-popup">Start Your Project</a>
+        <div class="menu-social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </aside>
+    <section class="hero">
+      <div class="slider">
+        <div class="slider-wrapper">
+          <div class="slide">
+            <img src="assets/annie-gavin-MJwb8dEQmr0-unsplash.jpg" alt="Beautifully landscaped garden patio">
+          </div>
+          <div class="slide">
+            <img src="assets/fraem-gmbh-LVJnIiIeyO0-unsplash.jpg" alt="Lush green lawn with garden beds">
+          </div>
+          <div class="slide">
+            <img src="assets/jared-muller-EkhWxU_pgLo-unsplash.jpg" alt="Elegant stone walkway through a garden">
+          </div>
+        </div>
+       
+      </div>
+
+       <button id="prevBtn" class="slider-zone slider-zone-left"></button>
+        <button id="nextBtn" class="slider-zone slider-zone-right"></button>
+
+      <div class="hero-text">
+        <h1>Your Dream Garden, Expertly Crafted.</h1>
+        <p>Let us turn your vision into a beautiful reality...</p>
+        <!-- ADD THIS BUTTON -->
+        <a href="#our-service" class="hero-btn">View Our Services</a>
+      </div>
+    </section>
+    <div class="services-wrapper">
+      <section class="icon-services">
+<!-- Card 1 -->
+      <div class="icon-card">
+          <div class="icon-card-icon">
+            <i class="fa-solid fa-tree"></i>
+          </div>
+          <h3>Complete Landscape Care</h3>
+          <p>We don't just build your dream garden; we nurture it. Our expert development services will transform your property into a captivating oasis, and our dedicated maintenance ensures it stays beautiful and healthy for years to come.</p>
+        </div>
+<!-- Card 2 -->
+        <div class="icon-card">
+          <div class="icon-card-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3>Give Your Garden a Personal Touch</h3>
+          <p>It's the details that transform a garden into your personal sanctuary. Discover our curated collection of decor—from elegant statues to vibrant planters—and find the perfect pieces to express your unique style and bring your outdoor space to life.</p>
+        </div>
+<!-- Card 3 -->
+        <div class="icon-card">
+          <div class="icon-card-icon">
+            <i class="fa-brands fa-pagelines"></i>
+          </div>
+          <h3>The Allure of Exotic Plants</h3>
+          <p>Bring home the vibrant beauty of the tropics. Our collection of exotic plants offers stunning foliage and unique blooms, perfect for adding a dramatic and sophisticated touch to your indoor or outdoor spaces.</p>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- Home page service layout -->
+    <section class="hover-grid-container">
+
+      <!-- Card 1  -->
+      <div class="hover-card">
+        <img
+          src="https://images.unsplash.com/photo-1554700124-538d459fc050?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Artificial Turf Installation" class="hover-card-background">
+        <div class="hover-card-content">
+          <h2>Artificial Turf Installation</h2>
+          <p>Imagine a lush, green lawn that needs no mowing or watering. Your perfect, carefree outdoor space is just
+            one installation away.</p>
+        </div>
+      </div>
+      <!-- Card 2  -->
+      <div class="hover-card"> <img
+          src="https://plus.unsplash.com/premium_photo-1664303217645-167458dee8d2?q=80&w=850&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Concrete Masonry" class="hover-card-background">
+        <div class="hover-card-content">
+          <h2>Concrete Masonry</h2>
+          <p>Extend your living space outdoors with a stunning new patio for entertaining or an elegant walkway for your
+            garden strolls.</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="hover-card"> <img
+          src="https://media.istockphoto.com/id/1445233447/photo/landscape-gardener-laying-turf-for-new-lawn.jpg?s=612x612&w=0&k=20&c=OAK9mHqL-5K36q85Fn46HTQZZUwN5yCR0GS80bu1iOI="
+          alt="Custom Landscape Design" class="hover-card-background">
+        <div class="hover-card-content">
+          <h2>Custom Landscape Design</h2>
+          <p>Your garden should be as unique as you are. Let us help you design a personalized outdoor sanctuary that
+            perfectly reflects your style and vision.</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="hover-card"> <img
+          src="https://thumbs.dreamstime.com/b/landscaping-project-new-drainage-system-decorative-rocks-residential-area-newly-installed-lined-enhances-modern-360465187.jpg"
+          alt="Drainage Solutions" class="hover-card-background">
+        <div class="hover-card-content">
+          <h2>Drainage Solutions</h2>
+          <p>Stop worrying every time it rains. Gain peace of mind with a permanent solution that protects your home and
+            garden from the heaviest monsoon water.</p>
+        </div>
+      </div>
+      <!-- card 5 -->
+      <div class="hover-card"> <img src="https://i.pinimg.com/474x/e3/d3/d4/e3d3d4b20e696ef9318e82263bb6af92.jpg"
+          alt="Driveway Landscaping" class="hover-card-background">
+        <div class="hover-card-content">
+          <h2>Driveway Landscaping</h2>
+          <p>Make your home the jewel of the neighbourhood. Welcome your guests with a beautifully landscaped entrance
+            that creates an unforgettable first impression.</p>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="hover-card"> <img
+          src="https://redfoxlandscape.com/wp-content/uploads/2024/03/AdobeStock_230133957-1000w.jpg"
+          alt="Grading & Resloping" class="hover-card-background">
+        <div class="hover-card-content">
+          <h2>Grading & Resloping</h2>
+          <p>Say goodbye to a soggy yard and protect your home's foundation. Proper land grading ensures a healthy, dry,
+            and stable landscape for years to come.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Call to Action  -->
+    <section class="glass-feature-section">
+      <div class="glass-card">
+        <img
+          src="https://images.unsplash.com/photo-1628597380133-19eac262e73f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Lush green plant leaves" class="glass-card-bg">
+        <div class="glass-card-content">
+          <h2>Give Your Garden a Soul</h2>
+          <p>The right decor is what gives your garden its unique personality. Find the perfect details that will
+            transform your outdoor space from simply beautiful to truly unforgettable.</p>
+          <a href="https://wa.me/911234567890" class="glass-btn">
+            <i class="fa-brands fa-whatsapp"></i> Whatsapp Now
+          </a>
+        </div>
+      </div>
+
+      <div class="glass-feature-image">
+        <img src="https://i.pinimg.com/1200x/b0/83/bf/b083bf21cfd7d462a343493d6d6dc27c.jpg"
+          alt="Stylish illuminated planters on a lush green lawn">
+      </div>
+    </section>
+
+    <section class="process-section">
+      <h2 class="section-heading">Our Working Process</h2>
+      <div class="timeline-container">
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <i class="fas fa-comments"></i>
+            <h3>01. Consultation</h3>
+            <p>We start with a detailed consultation to understand your vision, needs, and the unique potential of your
+              space.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-content">
+            <i class="fas fa-pencil-ruler"></i>
+            <h3>02. Design & Planning</h3>
+            <p>Our experts create a custom landscape design and a clear plan, outlining every detail for your approval.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <i class="fas fa-person-digging"></i>
+            <h3>03. Implementation</h3>
+            <p>Our skilled team brings the design to life with meticulous craftsmanship and quality materials.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-content">
+            <i class="fas fa-key"></i>
+            <h3>04. Results & Handover</h3>
+            <p>We ensure you are thrilled with the final result and provide guidance on how to care for your new
+              beautiful landscape.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Our Clients  -->
+    <section class="client-section">
+      <h2 class="section-heading">Our Clients</h2>
+      <div class="logo-scroller">
+        <div class="logo-scroller-inner">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+          <img src="assets/lOGO.png" alt="logo">
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial  -->
+    <section class="testimonial-v2-section">
+      <div class="testimonial-v2-container">
+
+        <div class="testimonial-v2-static">
+          <i class="fa-solid green fa-quote-left"></i>
+          <h2>What our customers are saying</h2>
+          <p>We take pride in our work, and we're thrilled when our clients love their new outdoor spaces as much as we
+            do.</p>
+        </div>
+
+        <div class="testimonial-v2-scroller">
+          <div class="testimonial-v2-inner">
+
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>"We are absolutely thrilled with our new backyard! The team turned our muddy, unused space into a beautiful oasis with a stunning stone patio and gorgeous plants. They were professional, on time, and their attention to detail was incredible. We finally have an outdoor space our family can enjoy."</p>
+              <div class="author-info">
+                <img
+                  src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="people">
+                <div class="author-text">
+                  <strong>— Priya S., Alipore, Kolkata</strong>
+                  <span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>"I cannot recommend them enough for their drainage work. Every monsoon our garden would become a swamp, but their team installed a solution that has worked perfectly. They were knowledgeable, efficient, and solved a problem we've had for years. Thank you!"</p>
+              <div class="author-info">
+                <img
+                  src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="people">
+                <div class="author-text">
+                  <strong>— Rohan M., Shibpur, Howrah</strong>
+                  <span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>"The best lawn maintenance service in the area! Our grass has never looked healthier or greener. The team is always punctual, polite, and does a fantastic job every single time. It's a pleasure to come home to such a well-kept garden."</p>
+              <div class="author-info">
+                <img
+                  src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="people">
+                <div class="author-text">
+                  <strong>— Anjali D., Salt Lake, Kolkata</strong>
+                  <span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>"From the initial consultation to the final result, the entire process was seamless. They landscaped the area around our driveway and it has completely lifted the curb appeal of our home. A truly professional and talented team."</p>
+              <div class="author-info">
+                <img
+                  src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="people">
+                <div class="author-text">
+                  <strong>— S. Banerjee, Bally, Howrah</strong>
+                  <span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+ <div id="fab-hide-trigger-zone">
+    <section class="final-cta-section">
+      <div class="cta-content-wrapper">
+        <h2>Ready to Create Your Outdoor Oasis?</h2>
+        <a href="#" class="cta-button js-open-popup">Request a Free Consultation</a>
+      </div>
+      <img src="assets/plant.png" alt="A decorative plant leaf" class="cta-plant-image">
+    </section>
+    <!-- ============================================= -->
+    <!-- Universal Popup Contact Form -->
+    <!-- ============================================= -->
+    <div class="popup-overlay" id="contact-popup-overlay"></div>
+    <div class="popup-form-container" id="contact-popup">
+      <button class="popup-close-btn" id="close-popup-btn">&times;</button>
+      <img src="assets/plant2.png" alt="" class="popup-bg-plant">
+
+      <div class="popup-form-content">
+        <h2>Message Us</h2>
+        <!-- This form is Netlify-ready -->
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="text" name="name" placeholder="Name *" required>
+          <input type="email" name="email" placeholder="Email *" required>
+          <input type="tel" name="phone" placeholder="Phone *" required>
+          <div class="custom-select-wrapper">
+            <select name="service" required>
+              <option value="" disabled selected>Select Your Service</option>
+              <option value="Artificial Turf Installation">Artificial Turf Installation</option>
+              <option value="Concrete Masonry">Concrete Masonry</option>
+              <option value="Custom Landscape Design">Custom Landscape Design</option>
+              <option value="Irrigation">Drainage Solutions</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <input type="text" name="location" placeholder="Location">
+          <textarea name="message" placeholder="Message" rows="4"></textarea>
+          <button type="submit" class="popup-submit-btn">SEND</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+  <footer class="main-footer">
+    <div class="footer-container">
+
+      <div class="footer-column footer-about">
+        <h3>LOGO</h3>
+        <p>Creating beautiful and sustainable landscapes across Howrah and Kolkata with a passion for quality and
+          craftsmanship.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Artificial Turf Installation</a></li>
+          <li><a href="#services">Concrete Masonry</a></li>
+          <li><a href="#services">Custom Landscape Design</a></li>
+          <li><a href="#services">Drainage Solutions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Have a Question?</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 55, Alipore Road, Kolkata</p>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> info@yourcompany.com</p>
+      </div>
+
+    </div>
+
+    <div class="sub-footer">
+      <p>© 2025 ABC Landscaping. All Rights Reserved.</p>
+    </div>
+  </footer>
+  </div>
+
+
+  <!-- ============================================= -->
+  <!-- Universal Floating Action Buttons -->
+  <!-- ============================================= -->
+  <div class="floating-action-buttons">
+
+    <!-- Center "Get Quote" Button -->
+    <a href="#" class="fab-main-cta js-open-popup">Get a Free Quote</a>
+
+    <!-- Right-Side Buttons -->
+    <div class="fab-side-buttons">
+      <a href="https://wa.me/YOUR_PHONE_NUMBER" class="fab-side-btn fab-whatsapp">
+        <span class="fab-text" id="whatsapp-fab-text">Chat on WhatsApp</span>
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="tel:YOUR_PHONE_NUMBER" class="fab-side-btn fab-call">
+        <span class="fab-text" id="call-fab-text">Talk To An Expert</span>
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+
+  </div>
+  <script src="js/script.js" defer></script>
+
+   <a href="#" id="scrollToTopBtn" class="scroll-to-top-btn">
+    <i class="fas fa-arrow-up"></i>
+  </a> 
+</body>
+
+</html>
