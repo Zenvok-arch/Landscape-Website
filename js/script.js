@@ -2,6 +2,16 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+ window.addEventListener('load', () => {
+      // Delay duration in milliseconds (e.g., 2000ms = 2 seconds)
+      const delayMs = 500;
+
+      setTimeout(() => {
+        document.body.style.visibility = 'visible';
+      }, delayMs);
+    });
+
 // =============================================
 // --- Hamburger Menu Logic ---
 // =============================================
