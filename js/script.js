@@ -229,51 +229,53 @@ document.addEventListener('DOMContentLoaded', () => {
     popupOverlay.addEventListener('click', closePopup);
   }
 
-  // =============================================
-  // --- Cloudflare Form Submission Logic ---
-  // =============================================
-  const contactForm = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
+// =============================================
+// --- FINAL Cloudflare Form Submission Logic ---
+// =============================================
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (event) {
-      event.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.textContent;
-      submitButton.disabled = true;
-      submitButton.textContent = 'SENDING...';
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'SENDING...';
 
-      const formData = new FormData(contactForm);
-      const workerUrl = 'https://landscape-form-handler.programmingbeast.workers.dev/';
+    const formData = new FormData(contactForm);
+    const workerUrl = '/submit-form'; // This now points to your new function file
 
-      fetch(workerUrl, {
-        method: 'POST',
-        body: formData,
-      })
-        .then(response => response.json())
-        .then(data => {
-          formStatus.textContent = data.message;
-          if (data.success) {
-            formStatus.className = 'form-status-message success';
-            contactForm.reset();
-          } else {
-            formStatus.className = 'form-status-message error';
-          }
-        })
-        .catch(error => {
-          formStatus.textContent = 'A network error occurred. Please try again.';
-          formStatus.className = 'form-status-message error';
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-          submitButton.textContent = originalButtonText;
-          setTimeout(() => {
-            formStatus.style.display = 'none';
-          }, 6000);
-        });
+    fetch(workerUrl, {
+      method: 'POST',
+      body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+      formStatus.textContent = data.message;
+      if (data.success) {
+        formStatus.className = 'form-status-message success';
+        contactForm.reset();
+        // This resets the Turnstile widget after a successful submission
+        turnstile.reset(); 
+      } else {
+        formStatus.className = 'form-status-message error';
+      }
+    })
+    .catch(error => {
+      formStatus.textContent = 'A network error occurred. Please try again.';
+      formStatus.className = 'form-status-message error';
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+      setTimeout(() => {
+        formStatus.style.display = 'none';
+      }, 6000);
     });
-  }
+  });
+}
 
   // =============================================
   // --- DYNAMIC & Reusable Custom Select Dropdown ---
