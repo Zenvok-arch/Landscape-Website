@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, delayMs);
   });
 
-  // =============================================
-  // --- Hamburger Menu Logic ---
-  // =============================================
+  // Hamburger Menu Logic
   const hamberger = document.querySelector(".hamberger");
   const mobileOverlay = document.querySelector(".mobile-overlay");
   const aside = document.querySelector(".navitems-mb");
@@ -17,23 +15,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLink = document.querySelectorAll(".navitem-mb li:not(.mobile-dropdown) > a");
   const fabContainer = document.querySelector(".floating-action-buttons");
 
-  hamberger.addEventListener("click", () => {
-    hamberger.classList.toggle("active");
-    mobileOverlay.classList.toggle("active");
-    aside.classList.toggle("active");
-    body.classList.toggle("hidden");
-    fabContainer.classList.toggle("fabs-hidden");
-    if (typeof updateSlider === 'function') {
-      setTimeout(updateSlider, 50);
-    }
-  });
+  if (hamberger) {
+    hamberger.addEventListener("click", () => {
+      hamberger.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
+      aside.classList.toggle("active");
+      body.classList.toggle("hidden");
+      fabContainer.classList.toggle("fabs-hidden");
+      if (typeof updateSlider === 'function') {
+        setTimeout(updateSlider, 50);
+      }
+    });
+  }
 
   function closeMobileMenu() {
-    hamberger.classList.remove("active");
-    mobileOverlay.classList.remove("active");
-    aside.classList.remove("active");
-    body.classList.remove("hidden");
-    fabContainer.classList.remove("fabs-hidden");
+    if (hamberger) hamberger.classList.remove("active");
+    if (mobileOverlay) mobileOverlay.classList.remove("active");
+    if (aside) aside.classList.remove("active");
+    if (body) body.classList.remove("hidden");
+    if (fabContainer) fabContainer.classList.remove("fabs-hidden");
     const openDropdown = document.querySelector('.mobile-dropdown.is-open');
     if (openDropdown) {
       openDropdown.classList.remove('is-open');
@@ -42,12 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  mobileOverlay.addEventListener("click", closeMobileMenu);
-  navLink.forEach(n => n.addEventListener("click", closeMobileMenu));
+  if (mobileOverlay) mobileOverlay.addEventListener("click", closeMobileMenu);
+  if (navLink) navLink.forEach(n => n.addEventListener("click", closeMobileMenu));
 
-  // =============================================
-  // --- Professional Desktop Dropdown Logic ---
-  // =============================================
+  // Desktop Dropdown Logic
   const dropdowns = document.querySelectorAll('.dropdown-li');
   dropdowns.forEach(dropdown => {
     const triggerLink = dropdown.querySelector('a');
@@ -80,9 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // =============================================
-  // --- Mobile Accordion Menu Logic ---
-  // =============================================
+  // Mobile Accordion Menu Logic
   const mobileDropdownTrigger = document.querySelector('.mobile-dropdown > a');
   if (mobileDropdownTrigger) {
     mobileDropdownTrigger.addEventListener('click', (event) => {
@@ -98,72 +94,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // =============================================
-  // --- Infinite Hero Slider Logic ---
-  // =============================================
+  // Hero Slider Logic
   const sliderWrapper = document.querySelector('.slider-wrapper');
   if (sliderWrapper) {
     const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[totalSlides - 1].cloneNode(true);
-    sliderWrapper.appendChild(firstClone);
-    sliderWrapper.insertBefore(lastClone, slides[0]);
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const allSlides = document.querySelectorAll('.slide');
-    let currentIndex = 1;
+    if (slides.length > 0) {
+        const totalSlides = slides.length;
+        const firstClone = slides[0].cloneNode(true);
+        const lastClone = slides[totalSlides - 1].cloneNode(true);
+        sliderWrapper.appendChild(firstClone);
+        sliderWrapper.insertBefore(lastClone, slides[0]);
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const allSlides = document.querySelectorAll('.slide');
+        let currentIndex = 1;
 
-    function updateSlider() {
-      const slideWidth = allSlides[0].clientWidth;
-      sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        function updateSlider() {
+          if (allSlides.length > 0) {
+            const slideWidth = allSlides[0].clientWidth;
+            sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+          }
+        }
+        sliderWrapper.style.transition = 'none';
+        updateSlider();
+        setTimeout(() => {
+          sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
+
+        if (nextBtn) nextBtn.addEventListener('click', () => {
+          if (currentIndex >= allSlides.length - 1) return;
+          currentIndex++;
+          updateSlider();
+        });
+        if (prevBtn) prevBtn.addEventListener('click', () => {
+          if (currentIndex <= 0) return;
+          currentIndex--;
+          updateSlider();
+        });
+        sliderWrapper.addEventListener('transitionend', () => {
+          if (currentIndex === allSlides.length - 1) {
+            sliderWrapper.style.transition = 'none';
+            currentIndex = 1;
+            updateSlider();
+          }
+          if (currentIndex === 0) {
+            sliderWrapper.style.transition = 'none';
+            currentIndex = totalSlides;
+            updateSlider();
+          }
+          setTimeout(() => {
+            sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+          }, 50);
+        });
+        window.addEventListener('resize', () => {
+          sliderWrapper.style.transition = 'none';
+          updateSlider();
+          setTimeout(() => {
+            sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+          }, 50);
+        });
+        setInterval(() => {
+          if (nextBtn) nextBtn.click();
+        }, 5000);
     }
-    sliderWrapper.style.transition = 'none';
-    updateSlider();
-    setTimeout(() => {
-      sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
-    }, 50);
-
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex >= allSlides.length - 1) return;
-      currentIndex++;
-      updateSlider();
-    });
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex <= 0) return;
-      currentIndex--;
-      updateSlider();
-    });
-    sliderWrapper.addEventListener('transitionend', () => {
-      if (currentIndex === allSlides.length - 1) {
-        sliderWrapper.style.transition = 'none';
-        currentIndex = 1;
-        updateSlider();
-      }
-      if (currentIndex === 0) {
-        sliderWrapper.style.transition = 'none';
-        currentIndex = totalSlides;
-        updateSlider();
-      }
-      setTimeout(() => {
-        sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
-      }, 50);
-    });
-    window.addEventListener('resize', () => {
-      sliderWrapper.style.transition = 'none';
-      updateSlider();
-      setTimeout(() => {
-        sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
-      }, 50);
-    });
-    setInterval(() => {
-      nextBtn.click();
-    }, 5000);
   }
 
-  // =============================================
-  // --- Universal Popup Form Logic ---
-  // =============================================
+  // Universal Popup Form Logic
   const openPopupButtons = document.querySelectorAll('.js-open-popup');
   const contactPopup = document.getElementById('contact-popup');
   const closePopupBtn = document.getElementById('close-popup-btn');
@@ -185,13 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
         openPopup();
       });
     });
-    closePopupBtn.addEventListener('click', closePopup);
-    popupOverlay.addEventListener('click', closePopup);
+    if (closePopupBtn) closePopupBtn.addEventListener('click', closePopup);
+    if (popupOverlay) popupOverlay.addEventListener('click', closePopup);
   }
 
-  // =============================================
-  // --- FINAL Cloudflare Form Submission Logic ---
-  // =============================================
+  // FINAL Cloudflare Form Submission Logic
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
   if (contactForm) {
@@ -234,9 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // =============================================
-  // --- Custom Select Dropdown ---
-  // =============================================
+  // Custom Select Dropdown
   document.querySelectorAll('.custom-select-wrapper').forEach(setupCustomSelect);
   function setupCustomSelect(wrapper) {
     const selectElement = wrapper.querySelector('select');
@@ -276,9 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // =============================================
-  // --- Floating Action Buttons Logic ---
-  // =============================================
+  // Floating Action Buttons Logic
   const callFabText = document.getElementById('call-fab-text');
   const whatsappFabText = document.getElementById('whatsapp-fab-text');
   if (callFabText && whatsappFabText) {
@@ -317,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(animationLoop, 5000);
   }
 
-  // --- Scroll Detection Logic ---
+  // Scroll Detection Logic
   const allFabs = document.querySelectorAll('.fab-side-btn, .fab-main-cta');
   let scrollTimer;
   window.addEventListener('scroll', () => {
@@ -328,9 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   });
 
-  // =============================================
-  // --- Hide FABs When Footer is Visible ---
-  // =============================================
+  // Hide FABs When Footer is Visible
   const fabHideZone = document.querySelector('#fab-hide-trigger-zone');
   if (fabContainer && fabHideZone) {
     const observerOptions = {
@@ -352,9 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fabObserver.observe(fabHideZone);
   }
 
-  // =============================================
-  // --- Testimonial Scroller Fix ---
-  // =============================================
+  // Testimonial Scroller Fix
   const testimonialScroller = document.querySelector(".testimonial-v2-scroller");
   if (testimonialScroller) {
     const scrollerInner = testimonialScroller.querySelector(".testimonial-v2-inner");
@@ -366,9 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // =============================================
-  // --- Scroll to Top Button Logic ---
-  // =============================================
+  // Scroll to Top Button Logic
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
   if (scrollToTopBtn) {
     window.addEventListener("scroll", () => {
