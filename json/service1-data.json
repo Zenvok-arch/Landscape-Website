@@ -1,0 +1,127 @@
+{
+  "custom-design": {
+    "title": "Custom Landscape Design",
+    "longDescription": "Our custom design process is a collaborative journey. We begin by listening to your vision, understanding your lifestyle, and analyzing the unique characteristics of your property. We then translate these ideas into a detailed, beautiful, and practical design plan that serves as the blueprint for your dream outdoor sanctuary. Every element, from plant selection to material choice, is tailored to you.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1585333362083-d99a3806a5d4?q=80&w=870&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1614644331365-1643c2333e0f?q=80&w=870&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542847924-d942c74d6a71?q=80&w=870&auto=format&fit=crop"
+    ],
+    "faqs": [
+      {
+        "question": "What is included in a custom design package?",
+        "answer": "Our standard package includes an initial consultation, a site analysis, a 2D concept plan, a final master plan with plant and material lists, and one round of revisions."
+      },
+      {
+        "question": "How much does a landscape design cost?",
+        "answer": "The cost varies depending on the size and complexity of your property. We can provide a detailed quote after the initial consultation once we understand the full scope of your project."
+      },
+      {
+        "question": "How long does the design process take?",
+        "answer": "Typically, the initial design phase takes 1-2 weeks, depending on the complexity of the project and the speed of feedback and revisions."
+      },
+      {
+        "question": "Do I get to see a preview of the design?",
+        "answer": "Yes! We provide detailed 2D plans, and for an additional fee, we can also create realistic 3D renderings to help you visualize the final outcome before any construction begins."
+      },
+      {
+        "question": "Can you work with my existing ideas or inspiration photos?",
+        "answer": "Absolutely! We encourage you to share any ideas, photos, or sketches you have. It helps us understand your style and preferences to create a design you'll love."
+      }
+    ]
+  },
+  "architecture": {
+    "title": "Landscape Architecture",
+    "longDescription": "For projects requiring a greater level of technical detail, our landscape architecture services provide the necessary expertise. We handle complex challenges such as significant grade changes, large-scale drainage systems, structural integrations, and compliance with local regulations. Our architectural plans ensure that your landscape is not only beautiful but also structurally sound, sustainable, and built to last.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=870&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=870&auto=format&fit=crop"
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between a landscape designer and a landscape architect?",
+        "answer": "While both design outdoor spaces, a landscape architect has technical training to handle complex structural elements like retaining walls, large patios, drainage systems, and projects that require permits and adherence to building codes."
+      },
+      {
+        "question": "When do I need a landscape architect?",
+        "answer": "You should hire a landscape architect for projects involving significant changes to the land's grade, large retaining walls, swimming pools, complex drainage solutions, or any construction that requires a municipal permit."
+      },
+      {
+        "question": "Do you handle the permit application process?",
+        "answer": "Yes, as part of our architectural services, we can prepare and submit all necessary drawings and documentation to the local authorities (like the KMC) for permit approval."
+      },
+      {
+        "question": "Can you solve my property's waterlogging issues?",
+        "answer": "Definitely. Our architectural plans include detailed drainage solutions, such as French drains and grading plans, specifically designed to manage heavy monsoon rainfall in the Kolkata area."
+      },
+      {
+        "question": "Is landscape architecture more expensive than design?",
+        "answer": "Generally, yes, due to the technical drawings, engineering calculations, and permit processes involved. However, it prevents costly mistakes and ensures the long-term stability and safety of your investment."
+      }
+    ]
+  },
+  "garden-design": {
+    "title": "Garden Design",
+    "longDescription": "The heart of any landscape is its garden. Our garden design service focuses on the art and science of horticulture to create stunning plant compositions. We consider color theory, bloom times, textures, and growth habits to design gardens that offer year-round interest and beauty. Whether you desire a vibrant English cottage garden or a tranquil, modern green space, we bring it to life.",
+    "gallery": [
+        "https://images.unsplash.com/photo-1466692311255-8f653754b236?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1599412265910-2d885a498553?q=80&w=870&auto=format&fit=crop"
+    ],
+    "faqs": [
+      {
+        "question": "What kind of plants do you use?",
+        "answer": "We prioritize using a mix of beautiful ornamental plants and hardy native species that are well-suited to Kolkata's climate, ensuring your garden is both stunning and sustainable."
+      },
+      {
+        "question": "Do you design low-maintenance gardens?",
+        "answer": "Yes, that's one of our specialties. We can select drought-tolerant plants and use smart design techniques to create a beautiful garden that requires minimal upkeep."
+      },
+      {
+        "question": "Can you design a garden for my balcony or terrace?",
+        "answer": "Absolutely! We love creating lush container gardens for urban spaces. We can help you choose the right pots, soil, and plants to turn your balcony into a green oasis."
+      },
+      {
+        "question": "How do you ensure the garden looks good year-round?",
+        "answer": "We carefully plan our gardens with a mix of evergreen plants and seasonal flowers, considering different bloom times to ensure there is always something beautiful to see, no matter the season."
+      },
+      {
+        "question": "Where do you source your plants?",
+        "answer": "We work with a network of reputable local nurseries in and around Kolkata to source the healthiest, high-quality plants for your garden."
+      },
+      {
+        "question": "Do you also provide garden maintenance services?",
+        "answer": "Yes, we offer ongoing maintenance packages to keep your newly designed garden looking its best. We can discuss these options after the installation is complete."
+      }
+    ]
+  },
+  "yard-design": {
+    "title": "Complete Yard Designs",
+    "longDescription": "We look at your entire property as a single, cohesive canvas. Our complete yard design service integrates all aspects of your outdoor space, including lawns, patios, walkways, play areas, and garden beds. The goal is to create a harmonious environment that is both beautiful from every angle and perfectly suited to your family's lifestyle and activities.",
+    "gallery": [
+        "https://images.unsplash.com/photo-1617886322207-6f504e7472c5?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560251296-3c551852b5a4?q=80&w=870&auto=format&fit=crop"
+    ],
+    "faqs": [
+      {
+        "question": "What does a 'complete yard design' include?",
+        "answer": "It's a holistic plan that covers everything: hardscaping (patios, paths), softscaping (lawns, gardens), lighting, irrigation, and functional zones like seating or play areas, all designed to work together."
+      },
+      {
+        "question": "Can you design for a family with children or pets?",
+        "answer": "Yes, definitely. We can incorporate durable lawns, safe play areas, and non-toxic plants to create a yard that is both beautiful and family-friendly."
+      },
+      {
+        "question": "How much does a full yard renovation typically cost?",
+        "answer": "This varies widely based on the size of your yard and the features you want to include. We can work with your budget to phase the project or suggest cost-effective materials."
+      },
+      {
+        "question": "How long will the entire project take from design to completion?",
+        "answer": "A full yard project can take anywhere from a few weeks to a couple of months. We provide a detailed timeline with our proposal so you know exactly what to expect."
+      },
+      {
+        "question": "Can you help me design an outdoor entertaining area?",
+        "answer": "Absolutely! We can design beautiful and functional outdoor 'rooms' complete with patios, seating walls, outdoor kitchens, and ambient lighting perfect for hosting guests."
+      }
+    ]
+  }
+}

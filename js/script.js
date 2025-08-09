@@ -185,48 +185,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if (popupOverlay) popupOverlay.addEventListener('click', closePopup);
   }
 
-  // FINAL Cloudflare Form Submission Logic
-  const contactForm = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.textContent;
-      submitButton.disabled = true;
-      submitButton.textContent = 'SENDING...';
-      const formData = new FormData(contactForm);
-      const workerUrl = '/submit-form';
-      fetch(workerUrl, {
-        method: 'POST',
-        body: formData,
-      })
-      .then(response => response.json())
-      .then(data => {
-        formStatus.textContent = data.message;
-        if (data.success) {
-          formStatus.className = 'form-status-message success';
-          contactForm.reset();
-          if (typeof turnstile !== 'undefined') {
-            turnstile.reset();
-          }
-        } else {
-          formStatus.className = 'form-status-message error';
-        }
-      })
-      .catch(error => {
-        formStatus.textContent = 'A network error occurred. Please try again.';
-        formStatus.className = 'form-status-message error';
-      })
-      .finally(() => {
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-        setTimeout(() => {
-          formStatus.style.display = 'none';
-        }, 6000);
-      });
+
+  // =============================================
+// --- FINAL Web3Forms Submission Logic (Easy Way) ---
+// =============================================
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Stop the default page refresh
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'SENDING...';
+
+    const formData = new FormData(contactForm);
+    const object = {};
+    formData.forEach((value, key) => {
+        object[key] = value;
     });
-  }
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                formStatus.textContent = json.message;
+                formStatus.className = 'form-status-message success';
+                contactForm.reset();
+            } else {
+                formStatus.textContent = json.message;
+                formStatus.className = 'form-status-message error';
+            }
+        })
+        .catch(error => {
+            formStatus.textContent = 'A network error occurred. Please try again.';
+            formStatus.className = 'form-status-message error';
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 6000);
+        });
+  });
+}
 
   // Custom Select Dropdown
   document.querySelectorAll('.custom-select-wrapper').forEach(setupCustomSelect);

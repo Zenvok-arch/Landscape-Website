@@ -215,6 +215,22 @@ nav {
 .mobile-dropdown.is-open .mobile-arrow {
   transform: rotate(180deg);
 }
+
+
+/* ============================================= */
+/* --- Mobile Accordion Text Color Fix --- */
+/* ============================================= */
+
+
+.mobile-dropdown > .nav-link {
+  color: #333;
+}
+
+.mobile-dropdown.is-open > .nav-link {
+  color: var(--button-color);
+}
+
+
 .mobile-submenu {
   list-style: none;
   padding-left: 2.5rem;
@@ -1745,6 +1761,12 @@ nav {
     visibility: visible;
     margin-top: 5px;
   }
+
+  .dropdown-li:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 5px;
+}
 
  .dropdown-menu li a {
     padding: 0.8rem 1.5rem;

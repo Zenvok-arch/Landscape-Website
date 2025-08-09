@@ -18,7 +18,7 @@
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
   </noscript>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 </head>
 
 <body style="visibility: hidden;">
@@ -437,8 +437,14 @@
 
         <div class="popup-form-content">
           <h2>Message Us</h2>
-          <!-- This form is ready for Cloudflare Workers -->
-          <form id="contact-form" name="contact" method="POST">
+         
+          <!-- This is the final, simple form using Web3Forms -->
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- This hidden input is where you put your key -->
+            <input type="hidden" name="access_key" value="4306c25c-b7da-4a01-a9f2-79cb81c2a941">
+
+            <!-- All your other input fields stay the same -->
             <input type="text" name="name" placeholder="Name *" required>
             <input type="email" name="email" placeholder="Email *" required>
             <input type="tel" name="phone" placeholder="Phone *" required>
@@ -454,12 +460,10 @@
             </div>
             <input type="text" name="location" placeholder="Location">
             <textarea name="message" placeholder="Message" rows="4"></textarea>
-            <!-- Paste your Site Key here -->
 
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAABpruH6uHnopVWRK"></div>
+       
             <button type="submit" class="popup-submit-btn">SEND</button>
 
-            <!-- Add this new div for status messages -->
             <div id="form-status" class="form-status-message"></div>
           </form>
         </div>

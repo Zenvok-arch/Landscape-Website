@@ -118,6 +118,351 @@
   font-size: 1.1rem;
 }
 
+/* ============================================= */
+/* --- "Know More" Button & Service Modal (v2) --- */
+/* ============================================= */
+
+/* Know More Button (no changes) */
+.know-more-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: transparent;
+  color: var(--button-color);
+  border: 2px solid var(--button-color);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.know-more-btn:hover {
+  background-color: var(--button-color);
+  color: white;
+}
+
+/* Modal Overlay (no changes) */
+.service-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.service-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Container (no changes) */
+.service-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  z-index: 3000;
+  background-color: #ffffff;
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  height: auto;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.service-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+}
+
+/* --- NEW: Responsive Text and Accordion FAQ Styles --- */
+.modal-content {
+  padding: 2rem;
+}
+
+.modal-content h2 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive */
+  margin-bottom: 1rem;
+}
+
+.modal-content > p { /* Target only the main description paragraph */
+  font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive */
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.modal-gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.faq-section h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive */
+  margin-bottom: 1.5rem;
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.faq-question h4 {
+  font-size: clamp(1.1rem, 3vw, 1.25rem); /* Responsive */
+  font-weight: 600;
+  color: #333;
+}
+
+.faq-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  background-color: var(--button-color);
+  transition: transform 0.3s ease;
+}
+
+.faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.faq-icon::before {
+  transform: translate(-50%, -50%);
+}
+
+.faq-item.is-open .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(0deg); /* Hides vertical bar */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.faq-answer p {
+  padding: 0 0 1.5rem 0;
+  font-size: clamp(0.95rem, 2.5vw, 1rem); /* Responsive */
+  line-height: 1.7;
+  color: var(--para-text);
+}
+
+/* ============================================= */
+/* --- Why Choose Us Section --- */
+/* ============================================= */
+
+.why-choose-us-section {
+  padding: 4rem 1.5rem;
+  background-color: #f7f7f7; /* A very light grey to separate it */
+}
+
+/* Re-using the heading style from your homepage */
+.section-heading {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.why-choose-grid {
+  display: grid;
+  /* Creates a responsive grid that wraps automatically */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-choose-card {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: var(--box-shaow);
+  transition: transform 0.3s ease;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-10px);
+}
+
+.why-choose-icon {
+  font-size: 2.5rem;
+  color: var(--button-color); /* Your brand's green */
+  margin-bottom: 1.5rem;
+}
+
+.why-choose-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.why-choose-card p {
+  color: var(--para-text);
+  line-height: 1.7;
+}
+
+/* ============================================= */
+/* --- Other Services Sub-List Styles --- */
+/* ============================================= */
+
+.other-service-sublist {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  text-align: center;
+  flex-grow: 1; /* Helps with alignment */
+}
+
+.other-service-sublist li {
+  margin-bottom: 0.75rem;
+}
+
+.other-service-sublist a {
+  color: var(--para-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.other-service-sublist a:hover {
+  color: var(--button-color);
+  text-decoration: underline;
+}
+
+/* ============================================= */
+/* --- Other Services Section (Individual Cards) --- */
+/* ============================================= */
+
+.other-services-section {
+  padding: 4rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.individual-services-grid {
+  display: grid;
+  /* Creates a responsive grid of cards */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.individual-service-card {
+  position: relative;
+  display: block;
+  height: 200px; /* A consistent height for all cards */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--box-shaow);
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.individual-service-card:hover {
+  transform: scale(1.05);
+}
+
+.individual-service-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Dark overlay for text readability */
+.individual-service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+  z-index: 2;
+}
+
+.individual-card-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.individual-card-content h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -141,10 +486,19 @@
     flex: 1; 
   }
 
-  .feature-image-wrapper img {
-    height: 100%;
-    min-height: 420px;
+  /* --- THIS IS THE FIX --- */
+  .feature-image-wrapper {
+    /* Set a fixed, consistent height for all image containers on desktop */
+    height: 450px;
   }
+
+  .feature-image-wrapper img {
+    /* Make the image fill the container perfectly */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This crops the image nicely without stretching it */
+  }
+  /* --- END OF FIX --- */
   
   .feature-text-wrapper {
     padding: 3rem;
