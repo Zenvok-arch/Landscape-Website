@@ -1,0 +1,56 @@
+{
+  "alipore-residence": {
+    "title": "Alipore Residence",
+    "location": "Kolkata, West Bengal",
+    "description": "A complete transformation of a modern Alipore residence backyard. The project focused on creating a seamless indoor-outdoor flow, featuring a custom-designed stone patio for entertaining, lush vertical gardens to maximize green space, and a tranquil water feature that provides a calming ambiance. We used a mix of native and exotic plants to ensure year-round visual interest and sustainability.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=870&auto=format&fit=crop"
+    ]
+  },
+  "shibpur-garden": {
+    "title": "Shibpur Family Garden",
+    "location": "Howrah, West Bengal",
+    "description": "This project was designed for a young family in Shibpur. The primary goal was to create a safe, durable, and beautiful space for children to play. We installed hard-wearing turf, designed a dedicated play area with soft-landing mulch, and planted non-toxic, pet-friendly flora. The result is a vibrant, low-maintenance garden that the whole family can enjoy.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=870&auto=format&fit=crop"
+    ]
+  },
+  "salt-lake-courtyard": {
+    "title": "Salt Lake Courtyard",
+    "location": "Kolkata, West Bengal",
+    "description": "We revitalized a compact urban courtyard in Salt Lake, turning it into a chic, minimalist retreat. The design features elegant concrete pavers, raised planter beds to add dimension, and strategically placed lighting to create a warm, inviting atmosphere in the evenings. This project proves that even small spaces can have a big impact.",
+    "gallery": [
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=870&auto=format&fit=crop"
+    ]
+  },
+  "ballygunge-terrace": {
+    "title": "Ballygunge Terrace Garden",
+    "location": "Kolkata, West Bengal",
+    "description": "This project transformed a barren rooftop in Ballygunge into a lush terrace garden. We used lightweight containers and a custom soil mix to create a vibrant oasis in the sky. The design includes a mix of ornamental flowers, edible herbs, and a comfortable seating area, offering a perfect escape from the city bustle.",
+    "gallery": [
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=870&auto=format&fit=crop"
+    ]
+  },
+  "howrah-maidan-retreat": {
+    "title": "Howrah Maidan Retreat",
+    "location": "Howrah, West Bengal",
+    "description": "A traditional home near Howrah Maidan received a garden makeover that respected its classic architecture. We designed a cozy, shaded seating nook using natural materials and surrounded it with fragrant, flowering plants. The space now serves as a peaceful, private retreat for reading and relaxation.",
+    "gallery": [
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=870&auto=format&fit=crop"
+    ]
+  },
+  "new-town-commercial": {
+    "title": "New Town Commercial Space",
+    "location": "Kolkata, West Bengal",
+    "description": "For this commercial project in New Town, the goal was to create an impressive and welcoming entrance for clients and employees. We used bold, architectural plants, clean lines, and modern hardscaping materials to create a sophisticated, low-maintenance landscape that enhances the building's contemporary design.",
+    "gallery": [
+        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=870&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=870&auto=format&fit=crop"
+    ]
+  }
+}

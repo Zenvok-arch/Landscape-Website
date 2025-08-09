@@ -299,7 +299,7 @@ nav {
 .hero {
   position: relative;
   overflow: hidden;
-  height: 60vh;
+  height: 40vh;
   z-index: 1;
 }
 
@@ -461,26 +461,6 @@ nav {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero-btn {
-  display: inline-block;
-  margin-top: 2rem;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  padding: clamp(0.8rem, 2.5vw, 1.1rem) clamp(1.5rem, 5vw, 2.5rem);
-  background-color: var(--button-color);
-  /* Your brand's green */
-  color: white;
-  /* Dark text for high contrast */
-  text-decoration: none;
-  font-weight: 600;
-  font-family: var(--heading-font);
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
 
 /* --- Icon-Based Services Section --- */
 

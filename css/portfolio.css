@@ -1,0 +1,253 @@
+/* ============================================= */
+/* --- Portfolio Page Hero Section --- */
+/* ============================================= */
+.portfolio-hero {
+    position: relative;
+    background-color: #06301B; /* Pine green background */
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    padding: 2rem 1rem;
+}
+
+.portfolio-hero-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2.75rem); /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.portfolio-hero-plant {
+    position: absolute;
+    z-index: 1;
+    width: 90px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.portfolio-hero-plant.left {
+    top: -15px;
+    left: -25px;
+    transform: rotate(-45deg);
+}
+
+.portfolio-hero-plant.right {
+    bottom: -15px;
+    right: -25px;
+    transform: rotate(45deg);
+}
+
+/* ============================================= */
+/* --- Portfolio Page Introduction Article --- */
+/* ============================================= */
+.portfolio-intro {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.portfolio-intro p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
+    line-height: 1.8;
+    color: var(--para-text);
+}
+
+/* ============================================= */
+/* --- Portfolio Grid Section --- */
+/* ============================================= */
+.portfolio-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 4rem 1.5rem; /* Add padding for spacing */
+}
+
+.portfolio-grid {
+    display: grid;
+    /* Creates a responsive grid that wraps automatically */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the image corners are rounded */
+    box-shadow: var(--box-shaow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indicates the card is clickable */
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(3, 7, 18, 0.1);
+}
+
+.project-image {
+    height: 250px; /* A consistent height for the image container */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.project-info p {
+    color: var(--para-text);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* ============================================= */
+/* --- NEW: Portfolio Modal Styles --- */
+/* ============================================= */
+
+/* Modal Overlay */
+.portfolio-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.portfolio-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Container */
+.portfolio-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  z-index: 3000;
+  background-color: #ffffff;
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  height: auto;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.portfolio-modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+  z-index: 10;
+}
+
+.portfolio-modal-content {
+  padding: 2rem;
+}
+
+.portfolio-modal-content h2 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-modal-content .location {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-modal-content > p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: var(--para-text);
+}
+
+.portfolio-modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.portfolio-modal-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* **FIX**: Added loading state style */
+.portfolio-grid.loading::after {
+    content: 'Loading projects...';
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #888;
+    grid-column: 1 / -1; /* Make it span all columns */
+}
+
+
+/* ============================================= */
+/* --- Desktop & Tablet Styles --- */
+/* ============================================= */
+@media (min-width: 768px) {
+    .portfolio-hero {
+        min-height: 160px;
+    }
+
+    .portfolio-hero-plant {
+        width: 160px;
+    }
+    
+    .portfolio-hero-plant.left {
+        top: -30px;
+        left: -40px;
+    }
+
+    .portfolio-hero-plant.right {
+        bottom: -30px;
+        right: -40px;
+    }
+
+    .portfolio-intro {
+        padding: 3rem;
+    }
+}

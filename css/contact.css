@@ -1,0 +1,238 @@
+/* ============================================= */
+/* --- Contact Page Hero Section --- */
+/* ============================================= */
+.contact-hero {
+    position: relative;
+    background-color: #06301B; /* Pine green background */
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    padding: 2rem 1rem;
+}
+
+.contact-hero-plant {
+    position: absolute;
+    z-index: 1;
+    width: 90px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.contact-hero-plant.left {
+    top: -15px;
+    left: -25px;
+    transform: rotate(-45deg);
+}
+
+.contact-hero-plant.right {
+    bottom: -15px;
+    right: -25px;
+    transform: rotate(45deg);
+}
+
+.contact-hero-title {
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+    font-weight: 700;
+}
+
+/* ============================================= */
+/* --- Main Contact Section --- */
+/* ============================================= */
+.contact-main-section {
+    padding: 2rem 1rem;
+    background-color: #f7f7f7;
+}
+
+.contact-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first: single column */
+    gap: 2rem;
+}
+
+/* ============================================= */
+/* --- Form Container (Left Div) --- */
+/* ============================================= */
+.contact-form-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shaow);
+    position: relative; /* Needed for positioning the decorative image */
+    overflow: hidden; /* Keeps the image contained */
+}
+
+.contact-form-container h3 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    z-index: 2; /* Ensures form fields are on top of the image */
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--button-color);
+    box-shadow: 0 0 0 3px rgba(96, 205, 111, 0.3);
+}
+
+.form-submit-btn {
+    padding: 15px;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.form-submit-btn:hover {
+    background-color: #4aa556; /* Darker green */
+    transform: scale(1.02);
+}
+
+/* The decorative image inside the form */
+.form-deco-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    opacity: 0.08; /* Make it very subtle */
+    z-index: 1; /* Place it behind the form fields */
+    pointer-events: none; /* Make it non-interactive */
+}
+
+
+/* ============================================= */
+/* --- Info Container (Right Div) --- */
+/* ============================================= */
+.contact-info-container {
+    background-color: #06301B; /* Pine Green */
+    color: #e0e0e0;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.contact-info-container h3 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.contact-info-intro {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+}
+
+.contact-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-details-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-details-list i {
+    font-size: 1.2rem;
+    color: var(--button-color);
+    margin-top: 4px;
+}
+
+.contact-details-list a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-details-list a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.map-container {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 300px; /* Fixed height for the map */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ============================================= */
+/* --- Desktop & Tablet Styles --- */
+/* ============================================= */
+@media (min-width: 992px) {
+    .contact-main-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .contact-wrapper {
+        /* Two-column layout for desktop */
+        grid-template-columns: 1.2fr 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-form-container,
+    .contact-info-container {
+        padding: 3rem;
+    }
+
+    .contact-hero {
+        min-height: 160px;
+    }
+
+    .contact-hero-plant {
+        width: 160px;
+    }
+    
+    .contact-hero-plant.left {
+        top: -30px;
+        left: -40px;
+    }
+
+    .contact-hero-plant.right {
+        bottom: -30px;
+        right: -40px;
+    }
+}
