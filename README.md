@@ -45,5 +45,3 @@ This project was built as a **frontend practice project** to improve skills in:
 - Layout structuring
 - UI/UX component building
 - Interactive elements using JavaScript
-
----
